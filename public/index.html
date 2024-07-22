@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB Corp Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            background: linear-gradient(135deg, #4D1C1C, #993030);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            width: 100%;
+            height: 80px;
+            background-color: #993030;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            justify-content: space-between;
+            position: fixed; /* Fixed header */
+            top: 0;
+            left: 0;
+            z-index: 10;
+            transform: translateY(-100%);
+            animation: slideIn 0.5s forwards;
+        }
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+            }
+        }
+        header .logo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            color: white;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav a {
+            font-family: 'Bebas Neue', cursive;
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: calc(100vh - 80px);
+            position: relative;
+            padding: 0 20px;
+            margin-top: 80px; /* Offset for the fixed header */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1s;
+        }
+        .circle {
+            width: 40vmin;
+            height: 40vmin;
+            background-color: #FFE560;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.5s;
+        }
+        .circle img {
+            width: 80%;
+            height: auto;
+        }
+        .text-content {
+            margin-left: 50%;
+            max-width: 50%;
+            text-align: left;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 2s;
+        }
+        .text-content h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            margin: 0;
+        }
+        .text-content p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+        }
+        .section {
+            width: 100%;
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .section h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .programming-languages, .contact {
+            background-color: #4D1C1C;
+        }
+        .projects-preview {
+            background-color: #993030;
+            position: relative;
+            padding: 50px 20px;
+        }
+        .projects-preview .gallery {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            height: 400px; /* Adjust as needed */
+        }
+        .projects-preview .gallery img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            transition: opacity 1s ease-in-out;
+        }
+        .projects-preview .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #FFE560;
+            color: #4D1C1C;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .projects-preview .btn:hover {
+            background-color: #f7e58a;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+        </nav>
+        <div class="logo">KBCORP PORTFOLIO</div>
+    </header>
+    <div class="main-content" id="home">
+        <div class="circle">
+            <img src="https://via.placeholder.com/300" alt="Placeholder">
+        </div>
+        <div class="text-content">
+            <h1>Welcome to the KB Corp Portfolio</h1>
+            <p>A portfolio by KB, focusing on JavaScript, NodeJS, and MongoDB.</p>
+        </div>
+    </div>
+    <section class="section programming-languages" id="programming">
+        <h2>Programming Languages</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus.</p>
+    </section>
+    <section class="section projects-preview" id="projects">
+        <h2>Projects Preview</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/800x400?text=Project+1" alt="Project 1">
+            <img src="https://via.placeholder.com/800x400?text=Project+2" alt="Project 2">
+            <img src="https://via.placeholder.com/800x400?text=Project+3" alt="Project 3">
+        </div>
+        <a href="projects.html" class="btn">Projects</a>
+    </section>
+    <section class="section contact" id="contact">
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus.</p>
+    </section>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.projects-preview .gallery img');
+        const totalImages = images.length;
+
+        function showNextImage() {
+            images[currentIndex].style.opacity = '0';
+            currentIndex = (currentIndex + 1) % totalImages;
+            images[currentIndex].style.opacity = '1';
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+        showNextImage(); // Initial call to show the first image
+    </script>
+</body>
+</html>
