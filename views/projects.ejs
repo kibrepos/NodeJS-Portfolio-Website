@@ -4,183 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            background: linear-gradient(135deg, #4D1C1C, #993030);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        header {
-            width: 100%;
-            height: 80px;
-            background-color: #993030;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            transform: translateY(-100%);
-            animation: slideIn 0.5s forwards;
-        }
-        @keyframes slideIn {
-            to {
-                transform: translateY(0);
-            }
-        }
-        header .logo {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            color: white;
-        }
-        header nav {
-            display: flex;
-            align-items: center;
-        }
-        header nav a {
-            font-family: 'Bebas Neue', cursive;
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 0.5s;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: calc(100vh - 80px);
-            overflow: hidden;
-            padding: 0 20px;
-            text-align: center;
-            margin-top: 80px; /* Offset for the fixed header */
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 1s;
-        }
-        .main-content h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 1.5s;
-        }
-        .main-content p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 2s;
-        }
-        .cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .card {
-            width: 200px;
-            height: 250px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .card img {
-            width: 100%;
-            height: 70%;
-            object-fit: cover;
-        }
-        .card h3 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.2rem;
-            margin: 0;
-            color: white; /* Updated text color to white */
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for better contrast */
-            padding: 10px;
-            width: 100%;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-    </style>
+    <link rel="stylesheet" href="/styles-project.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
+        <a href="/" class="logo">KBCORP PORTFOLIO</a>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">About Me</a>
-            <a href="/projects">Projects</a>
+            <a href="/">About Me</a>
+            <a href="#projects">Projects</a>
         </nav>
-        <div class="logo">KBCORP PORTFOLIO</div>
     </header>
-    <div class="main-content">
-        <h1>Projects</h1>
-        <p>Details about various projects will be listed here. This is a placeholder text for the Projects page.</p>
-        <div class="cards-container">
-            <a href="/project1" class="card">
-                <img src="https://via.placeholder.com/200x250" alt="Project 1">
-                <h3>Project 1</h3>
-            </a>
-            <a href="/project2" class="card">
-                <img src="https://via.placeholder.com/200x250" alt="Project 2">
-                <h3>Project 2</h3>
-            </a>
-            <a href="/project3" class="card">
-                <img src="https://via.placeholder.com/200x250" alt="Project 3">
-                <h3>Project 3</h3>
-            </a>
-            <a href="/project4" class="card">
-                <img src="https://via.placeholder.com/200x250" alt="Project 4">
-                <h3>Project 4</h3>
-            </a>
-            <a href="/project5" class="card">
-                <img src="https://via.placeholder.com/200x250" alt="Project 5">
-                <h3>Project 5</h3>
-            </a>
+    
+    <section class="section" id="projects">
+        <div class="main-content">
+            <h1>Projects</h1>
+            <p>Details about various projects will be listed here. This is a placeholder text for the Projects page.</p>
+            <div class="cards-container">
+                <a href="/project1" class="card">
+                    <img src="https://via.placeholder.com/200x250" alt="Project 1">
+                    <h3>Project 1</h3>
+                </a>
+                <a href="/project2" class="card">
+                    <img src="https://via.placeholder.com/200x250" alt="Project 2">
+                    <h3>Project 2</h3>
+                </a>
+                <a href="/project3" class="card">
+                    <img src="https://via.placeholder.com/200x250" alt="Project 3">
+                    <h3>Project 3</h3>
+                </a>
+                <a href="/project4" class="card">
+                    <img src="https://via.placeholder.com/200x250" alt="Project 4">
+                    <h3>Project 4</h3>
+                </a>
+                <a href="/project5" class="card">
+                    <img src="https://via.placeholder.com/200x250" alt="Project 5">
+                    <h3>Project 5</h3>
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <script src="/script.js"></script>
 </body>
 </html>

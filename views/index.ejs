@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KB Corp Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header id="header">
+        <a href="#home" class="logo">KBCORP PORTFOLIO</a>
         <nav>
-            <a href="#home">Home</a>
-            <a href="/about">About Me</a>
-            <a href="/projects">Projects</a>
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
         </nav>
-        <div class="logo">KBCORP PORTFOLIO</div>
     </header>
+
     <div class="main-content" id="home">
         <div class="circle">
-            <img src="https://via.placeholder.com/300" alt="Placeholder">
+            <img src="https://raw.githubusercontent.com/kibrsifr/NodeJS-Portfolio-Website/main/resources/logoface.gif" alt="Placeholder">
         </div>
         <div class="text-content">
             <h1>Welcome to the KB Corp Portfolio</h1>
             <p>A portfolio by KB, focusing on JavaScript, NodeJS, and MongoDB.</p>
         </div>
     </div>
-    <section class="section programming-languages" id="programming">
-        <h2>Programming Languages</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus.</p>
+
+    <section class="section-about" id="about">
+        <div class="maincontent-about">
+            <div class="about-content">
+                <h1>About Me</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus. Morbi et urna at libero vehicula cursus.</p>
+            </div>
+            <div class="aboutbox">
+                <img src="https://via.placeholder.com/1200x400" alt="Placeholder">
+            </div>
+        </div>
     </section>
+    
     <section class="section projects-preview" id="projects">
         <h2>Projects Preview</h2>
         <div class="gallery">
@@ -38,41 +47,12 @@
         </div>
         <a href="/projects" class="btn">Projects</a>
     </section>
+
     <section class="section contact" id="contact">
         <h2>Contact</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus.</p>
     </section>
 
     <script src="/script.js"></script>
-    <script>
-        // Scroll event to hide/show header
-        let lastScrollY = window.scrollY;
-        const header = document.getElementById('header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY) {
-                // Scrolling down
-                header.classList.add('hidden');
-            } else {
-                // Scrolling up
-                header.classList.remove('hidden');
-            }
-            lastScrollY = window.scrollY;
-        });
-
-        // Project gallery image rotation
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.projects-preview .gallery img');
-        const totalImages = images.length;
-
-        function showNextImage() {
-            images[currentIndex].style.opacity = '0';
-            currentIndex = (currentIndex + 1) % totalImages;
-            images[currentIndex].style.opacity = '1';
-        }
-
-        setInterval(showNextImage, 3000); // Change image every 3 seconds
-        showNextImage(); // Initial call to show the first image
-    </script>
 </body>
 </html>

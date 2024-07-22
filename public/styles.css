@@ -2,16 +2,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    color: white;
-    background: linear-gradient(135deg, #4D1C1C, #993030);
+    color: #173B45;
+    background: linear-gradient(to bottom, #FF8225, #e83c1e);
+    background-size: 100% 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 header {
     width: 100%;
     height: 80px;
-    background-color: #993030;
+    background-color: #173B45;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -23,21 +25,25 @@ header {
     z-index: 10;
     transition: transform 0.3s ease-in-out;
 }
+
 header.hidden {
     transform: translateY(-100%);
 }
+
 header .logo {
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5rem;
-    color: white;
+    color: #F8EDED;
 }
+
 header nav {
     display: flex;
     align-items: center;
 }
+
 header nav a {
     font-family: 'Bebas Neue', cursive;
-    color: white;
+    color: #F8EDED;
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2rem;
@@ -45,11 +51,13 @@ header nav a {
     animation: fadeIn 1s forwards;
     animation-delay: 0.5s;
 }
+
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
+
 .main-content {
     display: flex;
     align-items: center;
@@ -63,10 +71,11 @@ header nav a {
     animation: fadeIn 1s forwards;
     animation-delay: 1s;
 }
+
 .circle {
-    width: 40vmin;
-    height: 40vmin;
-    background-color: #FFE560;
+    width: 50vmin; /* Twice the original size */
+    height: 50vmin; /* Twice the original size */
+    background-color: #F8EDED;
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
@@ -80,10 +89,13 @@ header nav a {
     animation: fadeIn 1s forwards;
     animation-delay: 1.5s;
 }
+
 .circle img {
-    width: 80%;
-    height: auto;
+    width: 100%; /* Cover the entire circle */
+    height: 100%; /* Cover the entire circle */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
 }
+
 .text-content {
     margin-left: 50%;
     max-width: 50%;
@@ -92,16 +104,21 @@ header nav a {
     animation: fadeIn 1s forwards;
     animation-delay: 2s;
 }
+
 .text-content h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 3rem;
     margin: 0;
+    color: #173B45;
 }
+
 .text-content p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
     margin: 10px 0 0;
+    color: #173B45;
 }
+
 .section {
     width: 100%;
     padding: 50px 20px;
@@ -109,25 +126,90 @@ header nav a {
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
+
 .section h2 {
     font-family: 'Bebas Neue', cursive;
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #FF8225;
 }
+
 .section p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
+    color: #B43F3F;
 }
+
 .programming-languages, .contact {
-    background-color: #4D1C1C;
+    background-color: #F8EDED;
 }
+
+/* CSS FOR ABOUT SECTION HERE */
+
+.section-about {
+    width: 100%;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maincontent-about {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text */
+}
+
+.about-content {
+    margin-bottom: 20px; /* Space between text and image */
+}
+
+.about-content h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: #173B45;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #173B45;
+    line-height: 1.6;
+}
+
+.aboutbox {
+    width: 100%;
+    max-width: 1200px;
+    height: 400px; /* Adjust height as needed */
+    background-color: #FF8225;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Space between text and image */
+}
+
+.aboutbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the container properly */
+    border-radius: 20px; /* Rounded corners for the image */
+}
+
+/*Projects Section Here*/
+
 .projects-preview {
-    background-color: #993030;
     position: relative;
     padding: 50px 20px;
 }
+
 .projects-preview .gallery {
     width: 80%;
     margin: 0 auto;
@@ -135,6 +217,7 @@ header nav a {
     position: relative;
     height: 400px; /* Adjust as needed */
 }
+
 .projects-preview .gallery img {
     width: 100%;
     height: auto;
@@ -145,11 +228,12 @@ header nav a {
     animation: fadeIn 1s forwards;
     transition: opacity 1s ease-in-out;
 }
+
 .projects-preview .btn {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #FFE560;
-    color: #4D1C1C;
+    background-color: #F8EDED;
+    color: #173B45;
     border: none;
     border-radius: 5px;
     font-family: 'Bebas Neue', cursive;
@@ -158,6 +242,24 @@ header nav a {
     display: inline-block;
     cursor: pointer;
 }
+
 .projects-preview .btn:hover {
-    background-color: #f7e58a;
+    background-color: #B43F3F;
+    color: #F8EDED;
 }
+
+/* Updated CSS for Sections */
+
+.section,
+.section-about,
+.projects-preview {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* For the animation classes */
+.fade-in {
+    opacity: 1; /* Show the element */
+}
+
+
