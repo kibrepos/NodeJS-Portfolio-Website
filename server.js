@@ -1,25 +1,50 @@
 const express = require('express');
 const path = require('path');
+
 const app = express();
-const port = 3000; // You can use any port you prefer
+const port = 3000;
+
+// Set the view engine to ejs
+app.set('view engine', 'ejs');
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve the main landing page
+// Define routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.render('index'); // Render the index.ejs template
 });
 
-// Serve the About Me page
+// Define routes
 app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+    res.render('about'); // Render the index.ejs template
 });
 
-// Serve the Projects page
 app.get('/projects', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'projects.html'));
+    const projects = [
+        { link: 'project1.html', image: 'https://via.placeholder.com/200x250' },
+        { link: 'project2.html', image: 'https://via.placeholder.com/200x250' },
+        { link: 'project3.html', image: 'https://via.placeholder.com/200x250' }
+    ];
+    res.render('projects', { projects }); // Render the projects.ejs template with the projects data
 });
+
+app.get('/project1', (req, res) => {
+    res.render('project1');
+});
+
+app.get('/project2', (req, res) => {
+    res.render('project1');
+});
+
+app.get('/project3', (req, res) => {
+    res.render('project1');
+});
+
+app.get('/project4', (req, res) => {
+    res.render('project1');
+});
+
 
 // Start the server
 app.listen(port, () => {
