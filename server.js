@@ -34,15 +34,15 @@ app.get('/project1', (req, res) => {
 });
 
 app.get('/project2', (req, res) => {
-    res.render('project1');
+    res.render('project2');
 });
 
 app.get('/project3', (req, res) => {
-    res.render('project1');
+    res.render('project3');
 });
 
 app.get('/project4', (req, res) => {
-    res.render('project1');
+    res.render('project4');
 });
 
 

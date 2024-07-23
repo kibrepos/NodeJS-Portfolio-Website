@@ -4,146 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project A</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            background: linear-gradient(135deg, #4D1C1C, #993030);
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        header {
-            width: 100%;
-            height: 80px;
-            background-color: #993030;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            box-sizing: border-box;
-            justify-content: space-between;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            transform: translateY(-100%);
-            animation: slideIn 0.5s forwards;
-        }
-        @keyframes slideIn {
-            to {
-                transform: translateY(0);
-            }
-        }
-        header .logo {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 1.5rem;
-            color: white;
-        }
-        header nav {
-            display: flex;
-            align-items: center;
-        }
-        header nav a {
-            font-family: 'Bebas Neue', cursive;
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2rem;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-            animation-delay: 0.5s;
-        }
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-        .content {
-            display: flex;
-            flex: 1;
-            margin-top: 80px; /* Offset for the fixed header */
-        }
-        .text-section {
-            flex: 1;
-            padding: 40px;
-            box-sizing: border-box;
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-            animation-delay: 1s;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .text-section h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: 3rem;
-            margin: 0;
-        }
-        .text-section p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        .images-section {
-            flex: 1;
-            overflow-y: auto;
-            padding: 40px;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #fff;
-        }
-        .images-section img {
-            width: 80%;
-            height: auto;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: scale(0.95);
-            animation: fadeInUp 1s forwards;
-        }
-        .images-section img:nth-child(1) {
-            animation-delay: 1.5s;
-        }
-        .images-section img:nth-child(2) {
-            animation-delay: 2s;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles-projectpage.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/">Home</a>
-            <a href="about">About Me</a>
-            <a href="projects">Projects</a>
+            <a href="/project1" class="nav-button"><i class="fas fa-arrow-left"></i></a>
+            <a href="/" class="logo">
+                <img src="https://raw.githubusercontent.com/kibrsifr/NodeJS-Portfolio-Website/main/resources/logoheader.png" alt="KBCORP PORTFOLIO Logo">
+            </a>
+            <a href="/project3" class="nav-button"><i class="fas fa-arrow-right"></i></a>
         </nav>
-        <div class="logo">KBCORP PORTFOLIO</div>
     </header>
-    <div class="content">
+    <div class="main-content">
         <div class="text-section">
-            <h1>PROJECT A</h1>
+            <h1>PROJECT B</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus. Morbi et urna at libero vehicula cursus. Fusce interdum velit ac lectus commodo, sed gravida erat faucibus. Nam at enim sed nulla tincidunt faucibus.</p>
             <p>Curabitur vel eros nec arcu tincidunt tempor. Integer varius felis nec nulla egestas, at varius erat condimentum. Phasellus vel turpis non turpis dictum elementum ut sit amet velit. Duis gravida lorem eu neque vehicula, et aliquam mauris consectetur.</p>
         </div>
@@ -154,3 +31,24 @@
     </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.images-section img');
+        
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                // Toggle the zoom class
+                img.classList.toggle('zoomed');
+                
+                // Remove zoom from other images
+                images.forEach(otherImg => {
+                    if (otherImg !== img) {
+                        otherImg.classList.remove('zoomed');
+                    }
+                });
+            });
+        });
+    });
+</script>
+

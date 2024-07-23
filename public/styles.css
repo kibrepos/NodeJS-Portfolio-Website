@@ -1,15 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    color: #173B45;
-    background: linear-gradient(to bottom, #FF8225, #e83c1e);
-    background-size: 100% 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* CSS For Header */
 header {
     width: 100%;
     height: 80px;
@@ -23,17 +12,21 @@ header {
     top: 0;
     left: 0;
     z-index: 10;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for transform and opacity */
+    opacity: 1;
+    animation: popIn 1s ease-out forwards; /* Apply pop-in animation */
 }
 
+/* Header hidden class */
 header.hidden {
     transform: translateY(-100%);
+    opacity: 0;
 }
 
-header .logo {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    color: #F8EDED;
+
+header .logo img {
+    height: 60px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
 }
 
 header nav {
@@ -47,16 +40,48 @@ header nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2rem;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.5s;
+    padding: 10px 20px; /* Add padding for a larger clickable area */
+    border-radius: 8px; /* Rounded corners for a more modern look */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
 }
 
+header nav a:hover {
+    background-color: #FF8225; /* Change background color on hover */
+    color: #173B45; /* Change text color on hover */
+    transform: scale(1.15); /* Larger scale transformation on hover */
+}
+
+/* Fade-in animation for nav links */
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #173B45;
+    background: 
+        linear-gradient(to bottom, #FF8225,  #e83c1e, #ee7d27, #e83c1e) /* Gradient background */
+        ; /*,url('https://github.com/kibrsifr/NodeJS-Portfolio-Website/blob/main/resources/backgroundindexcompressed.gif?raw=true'); /* Background image */
+    background-size: cover; /* Ensure the image covers the whole screen */
+    background-blend-mode: overlay; /* Blend the image with the gradient */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Updated CSS for Sections */
+.section,
+.section-about,
+.projects-preview {
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in effect */
+}
+
 
 .main-content {
     display: flex;
@@ -89,6 +114,7 @@ header nav a {
     animation: fadeIn 1s forwards;
     animation-delay: 1.5s;
 }
+
 
 .circle img {
     width: 100%; /* Cover the entire circle */
@@ -123,8 +149,6 @@ header nav a {
     width: 100%;
     padding: 50px 20px;
     text-align: center;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
 }
 
 .section h2 {
@@ -141,19 +165,18 @@ header nav a {
     margin: 0 auto;
     color: #B43F3F;
 }
-
-.programming-languages, .contact {
-    background-color: #F8EDED;
-}
-
-/* CSS FOR ABOUT SECTION HERE */
-
+/* About Section Here */
 .section-about {
     width: 100%;
     padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #173B45; /* Light background color */
+    border: 10px solid #B43F3F; /* Border color */
+    border-radius: 20px; /* Rounded corners for the border */
+    box-shadow: 0 0 0 5px #B43F3F; /* Outer shadow effect for additional depth */
+    color: #FF8225;
 }
 
 .maincontent-about {
@@ -172,14 +195,12 @@ header nav a {
 .about-content h1 {
     font-family: 'Bebas Neue', cursive;
     font-size: 3rem;
-    color: #173B45;
     margin-bottom: 20px;
 }
 
 .about-content p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: #173B45;
     line-height: 1.6;
 }
 
@@ -187,7 +208,7 @@ header nav a {
     width: 100%;
     max-width: 1200px;
     height: 400px; /* Adjust height as needed */
-    background-color: #FF8225;
+    background-color: #000000;
     border-radius: 20px;
     overflow: hidden;
     display: flex;
@@ -203,11 +224,19 @@ header nav a {
     border-radius: 20px; /* Rounded corners for the image */
 }
 
-/*Projects Section Here*/
 
+
+/* CSS For Projects Section Here */
 .projects-preview {
     position: relative;
     padding: 50px 20px;
+}
+
+.projects-preview h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem; /* Adjust font size if needed */
+    color: #F8EDED; /* Light color for be 0tter contrast */
+    margin-bottom: 20px; /* Space below the heading */
 }
 
 .projects-preview .gallery {
@@ -225,41 +254,116 @@ header nav a {
     top: 0;
     left: 0;
     opacity: 0;
-    animation: fadeIn 1s forwards;
     transition: opacity 1s ease-in-out;
 }
 
+/* Show the first image initially */
+.projects-preview .gallery img:first-child {
+    opacity: 1;
+}
+
 .projects-preview .btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #F8EDED;
-    color: #173B45;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif; /* Match font family */
+    font-size: 1.5rem; /* Increase font size */
+    color: #F8EDED; /* Match text color */
+    text-decoration: none; /* No underline */
+    background-color: #173B45; /* Match background color */
+    padding: 15px 30px; /* Increase padding for a larger button */
+    border-radius: 8px; /* Match border radius */
     display: inline-block;
     cursor: pointer;
+    margin-top: 30px; /* Add space between button and gallery */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
 }
 
+/* Match hover styles from contact-link */
 .projects-preview .btn:hover {
-    background-color: #B43F3F;
-    color: #F8EDED;
+    background-color: #FF8225; /* Change background color on hover */
+    color: #173B45; /* Change text color on hover */
+    transform: scale(1.05); /* Scale up on hover */
 }
 
-/* Updated CSS for Sections */
-
-.section,
-.section-about,
-.projects-preview {
-    opacity: 0; /* Start hidden */
-    transition: opacity 1s ease-in-out; /* Smooth fade-in effect */
+.projects-preview .btn:active {
+    transform: scale(0.95); /* Scale down on active */
 }
 
-/* For the animation classes */
+.fade-in {
+    opacity: 1; /* Show the element */
+}
+
 .fade-in {
     opacity: 1; /* Show the element */
 }
 
 
+/* CSS for Contact Section */
+.contact {
+    width: 100%;
+    padding: 30px 20px;
+    background-color: #173B45;
+    color: #F8EDED;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between image and content */
+}
+
+.contact-image img {
+    width: 150px; /* Size of the placeholder image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make the image circular */
+}
+
+.contact-content {
+    max-width: 600px;
+}
+
+.contact h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Compact spacing between links */
+}
+
+.contact-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    color: #F8EDED;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+
+.contact-link i {
+    margin-right: 8px;
+}
+
+.contact-link:hover {
+    background-color: #FF8225;
+    color: #173B45;
+    transform: scale(1.05);
+}
+
+.contact-link:active {
+    transform: scale(0.95);
+}
+
+/* FontAwesome icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

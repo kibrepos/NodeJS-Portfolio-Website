@@ -9,10 +9,13 @@
 </head>
 <body>
     <header id="header">
-        <a href="#home" class="logo">KBCORP PORTFOLIO</a>
+        <a href="#home" class="logo">
+            <img src="https://raw.githubusercontent.com/kibrsifr/NodeJS-Portfolio-Website/main/resources/logoheader.png" alt="KBCORP PORTFOLIO Logo">
+        </a>
         <nav>
             <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
+            <a href="/projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
@@ -21,11 +24,10 @@
             <img src="https://raw.githubusercontent.com/kibrsifr/NodeJS-Portfolio-Website/main/resources/logoface.gif" alt="Placeholder">
         </div>
         <div class="text-content">
-            <h1>Welcome to the KB Corp Portfolio</h1>
+            <h1>Welcome to the KBCorp Portfolio</h1>
             <p>A portfolio by KB, focusing on JavaScript, NodeJS, and MongoDB.</p>
         </div>
     </div>
-
     <section class="section-about" id="about">
         <div class="maincontent-about">
             <div class="about-content">
@@ -33,11 +35,11 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus. Morbi et urna at libero vehicula cursus.</p>
             </div>
             <div class="aboutbox">
-                <img src="https://via.placeholder.com/1200x400" alt="Placeholder">
+                <img src="https://via.placeholder.com/500" alt="Placeholder">
             </div>
         </div>
     </section>
-    
+
     <section class="section projects-preview" id="projects">
         <h2>Projects Preview</h2>
         <div class="gallery">
@@ -45,13 +47,37 @@
             <img src="https://via.placeholder.com/800x400?text=Project+2" alt="Project 2">
             <img src="https://via.placeholder.com/800x400?text=Project+3" alt="Project 3">
         </div>
-        <a href="/projects" class="btn">Projects</a>
+        <a href="/projects" class="btn">View all Projects</a>
     </section>
 
-    <section class="section contact" id="contact">
-        <h2>Contact</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Integer vel venenatis lectus.</p>
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-image">
+                <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            </div>
+            <div class="contact-content">
+                <h2>Contact Me</h2>
+                <div class="contact-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://www.schoolswebsite.com" target="_blank" class="contact-link">
+                        <i class="fas fa-school"></i>
+                        School
+                    </a>
+                    <a href="tel:+1234567890" class="contact-link">
+                        <i class="fas fa-phone"></i>
+                        +1 (234) 567-890
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
+    
+    
+    
+    
 
     <script src="/script.js"></script>
 </body>
