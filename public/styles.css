@@ -83,6 +83,7 @@ body {
 }
 
 
+/* Main content container */
 .main-content {
     display: flex;
     align-items: center;
@@ -92,57 +93,79 @@ body {
     position: relative;
     padding: 0 20px;
     margin-top: 80px; /* Offset for the fixed header */
-    opacity: 0;
-    animation: fadeIn 1s forwards;
     animation-delay: 1s;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Circle image container */
 .circle {
-    width: 50vmin; /* Twice the original size */
-    height: 50vmin; /* Twice the original size */
+    width: 50vmin; /* Increase size */
+    height: 50vmin; /* Increase size */
     background-color: #F8EDED;
     border-radius: 50%;
     overflow: hidden;
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 1.5s;
+    animation: fadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
-
 
 .circle img {
-    width: 100%; /* Cover the entire circle */
-    height: 100%; /* Cover the entire circle */
-    object-fit: cover; /* Ensures the image covers the circle without distortion */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Text content */
 .text-content {
-    margin-left: 50%;
-    max-width: 50%;
-    text-align: left;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 2s;
+    background: #173B45;
+    padding: 40px; /* Increase padding */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 1;
+    margin-left: 40px; /* Increase margin for spacing */
+}
+
+.text-content:hover {
+    animation: hoverAnimation 0.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover animation */
+@keyframes hoverAnimation {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
 
 .text-content h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; /* Increase font size */
     margin: 0;
-    color: #173B45;
+    color: #fff;
 }
 
 .text-content p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Increase font size */
     margin: 10px 0 0;
-    color: #173B45;
+    color: #fff;
 }
 
 .section {
@@ -194,7 +217,7 @@ body {
 
 .about-content h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
+    font-size: 5rem;
     margin-bottom: 20px;
 }
 
@@ -234,8 +257,8 @@ body {
 
 .projects-preview h2 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem; /* Adjust font size if needed */
-    color: #F8EDED; /* Light color for be 0tter contrast */
+    font-size: 5rem; /* Adjust font size if needed */
+    color: #173B45; /* Light color for be 0tter contrast */
     margin-bottom: 20px; /* Space below the heading */
 }
 

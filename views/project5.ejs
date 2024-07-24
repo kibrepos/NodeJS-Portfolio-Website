@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KBCorp Food Inventory</title>
+    <link rel="stylesheet" href="/styles-project5.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">
+        <img src="https://raw.githubusercontent.com/kibrsifr/NodeJS-Portfolio-Website/main/resources/logoheader.png" alt="KBCORP PORTFOLIO Logo">
+        </a>
+        <nav>
+        <a href="/projects">Projects</a>
+        </nav>
+        
+    </header>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h1>The KBCorp Food Inventory System</h1>
+            <p>This web application helps you manage your food inventory easily using CRUD operations. You can add food items and enter details like ingredients, stock, dishes sold, and prices.</p>
+
+            <p>The system automatically calculates the total profit based on the number of dishes sold and their prices. It uses MongoDB, which will set up a database for you automatically.</p>
+            
+            <p>Just make sure MongoDB is turned on for everything to work smoothly.</p>
+            
+        </div>
+        
+        <div class="section">
+            <div class="button-container">
+                
+                <form action="/search" method="GET">
+                    <input type="text" name="query" placeholder="Search by food item">
+                    <button type="submit">Search</button>
+                    <div>
+                    <a href="/add" class="btn">Add Food Item</a>
+                    </div>
+                </form>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Food Item</th>
+                        <th>Ingredients</th>
+                        <th>Stock</th>
+                        <th>Sold Dishes</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (foodItems && foodItems.length > 0) { %>
+                        <% foodItems.forEach(item => { %>
+                            <tr>
+                                <td><%= item.name %></td>
+                                <td><%= item.ingredients.join(', ') %></td>
+                                <td><%= item.stock %></td>
+                                <td><%= item.soldDishes %></td>
+                                <td>$<%= item.price.toFixed(2) %></td>
+                                <td class="actions">
+                                    <a href="/edit/<%= item._id %>" class="btn">Edit</a>
+                                    <a href="/delete/<%= item._id %>" class="btn">Delete</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6">No food items found.</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            
+            <% if (grossProfit !== undefined) { %>
+                <div class="gross-profit">
+                    Total Profit: $<%= grossProfit.toFixed(2) %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -85,6 +85,7 @@ header nav {
     min-height: 100vh; /* Ensure main-content covers the viewport height */
     padding: 100px 20px 20px; /* Offset for the fixed header and padding at the bottom */
     box-sizing: border-box;
+    color:#173B45
 }
 
 .text-section {
@@ -100,7 +101,7 @@ header nav {
 
 .text-section p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin: 20px 0;
 }
 
@@ -124,12 +125,18 @@ header nav {
 }
 
 .images-section img.zoomed {
-    transform: scale(2); /* Scale the image to zoom in */
-    z-index: 1000; /* Ensure zoomed image appears above other content */
     position: fixed; /* Fix position to keep zoomed image in view */
     top: 50%; /* Center image vertically */
     left: 50%; /* Center image horizontally */
-    transform: translate(-50%, -50%) scale(2); /* Center and scale */
-    max-width: none; /* Remove max-width constraint */
+    transform: translate(-50%, -50%); /* Center image without scaling */
+    width: auto; /* Allow natural width */
+    height: auto; /* Allow natural height */
+    max-width: 90vw; /* Limit width to viewport width */
     max-height: 90vh; /* Limit height to viewport height */
+    z-index: 1000; /* Ensure zoomed image appears above other content */
+    border-radius: 8px; /* Add border radius for aesthetics */
+    background-color: rgba(0, 0, 0, 0.8); /* Add dark background for focus */
+    padding: 10px; /* Add padding around the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
+
