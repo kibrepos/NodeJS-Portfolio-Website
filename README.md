@@ -23,7 +23,7 @@ A portfolio website run through Node.js, showcasing various Node.js related acti
    ```
 5. Open a browser and go to the provided URL to run the website.
 
-##PROJECT IMAGES
+## PROJECT IMAGES
 
 ![NodeJS Sample 1](https://github.com/user-attachments/assets/b027425e-4fe2-4e82-a1b5-68274a86137d)
 ![NodeJS Sample 2](https://github.com/user-attachments/assets/09149185-7834-4338-bb2b-ab680471877d)
